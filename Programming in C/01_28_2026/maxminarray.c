@@ -3,36 +3,36 @@
 
 int main()
 {
-	int arr[100], n, max, min, i, j, k;
+    int arr[100], n, max, min, i, maxindex, minindex;
 
-	printf("Enter limit: ");
-	scanf("%d", &n);
+    printf("Enter limit: ");
+    scanf("%d", &n);
 
-	for(i=0; i<n; i++)
-	{
-		printf("Enter value %d: ", i+1);
-		scanf("%d", &arr[i]);
-	}
+    for(i=0; i<n; i++)
+    {
+        printf("Enter value %d: ", i+1);
+        scanf("%d", &arr[i]);
+    }
 
-	max = arr[0];
-	for(j=0; j<n; j++)
-	{
-		if(max<arr[j])
-		{
-		max = arr[j];
-		}
-	}
-	min = arr[0];
-	for(k=0; k<n; k++)
-	{
-		if(min>arr[k])
-		{
-		min = arr[k];
-		}
-	}
+    max = min = arr[0];
+    maxindex = minindex = 0;
 
-	printf("\nThe maximum value in the array is %d\n", max);
-	printf("The minimum value in the array is %d\n", min);
+    for(i=1; i<n; i++)
+    {
+        if(arr[i] > max)
+        {
+            max = arr[i];
+            maxindex = i;
+        }
+        if(arr[i] < min)
+        {
+            min = arr[i];
+            minindex = i;
+        }
+    }
 
-	return 0;
+    printf("\nThe maximum value is %d at index %d", max, maxindex);
+    printf("\nThe minimum value is %d at index %d\n", min, minindex);
+
+    return 0;
 }
