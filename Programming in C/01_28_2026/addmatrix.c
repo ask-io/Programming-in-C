@@ -1,4 +1,4 @@
-//To add elements of two matrices
+//Addition of two matrices
 #include <stdio.h>
 
 int main() {
