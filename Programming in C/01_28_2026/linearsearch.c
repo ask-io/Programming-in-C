@@ -1,34 +1,31 @@
 //To find a target element through linear search
-#include<stdio.h>
+#include <stdio.h>
 
-int main()
-{
-        int arr[100], n, i, t, j, f;
+int main() {
+    int arr[100], n, i, t, f = 0;
 
-        printf("Enter limit: ");
-        scanf("%d", &n);
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
 
-        for(i=0; i<n; i++)
-        {
-                printf("Enter value %d: ", i+1);
-                scanf("%d", &arr[i]);
+    printf("Enter %d elements: ", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the target element to search: ");
+    scanf("%d", &t);
+
+    for(i = 0; i < n; i++) {
+        if(arr[i] == t) {
+            printf("Target found at position %d\n", i);
+            f = 1;
+            break; 
         }
+    }
 
-	printf("Enter a target: ");
-	scanf("%d", &t);
+    if(f == 0) {
+        printf("Target not found in the array.\n");
+    }
 
-	for(j=0; j<n; j++)
-	{
-		if(arr[j]==t)
-		{
-			printf("Found %d at index %d\n", t, j);
-			f = 1;
-		}
-	}
-	if(f == 0)
-	{
-		printf("The element was not found\n");
-	}
-	return 0;
+    return 0;
 }
-
